@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal | Timeless Elegance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #fff;
+            border-radius: 100px;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-weight: 300;
+            color: #e0e0e0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #000;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section with Background Animation */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%),
+                        url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            z-index: -1;
+            animation: backgroundZoom 20s infinite alternate;
+        }
+
+        @keyframes backgroundZoom {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 30px;
+            max-width: 600px;
+            color: #e0e0e0;
+        }
+
+        /* About Preview Section */
+        .about-preview {
+            background-color: #111;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1601924582970-9238bcb495d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1976&q=80') center/cover no-repeat;
+            opacity: 0.3;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background-color: #fff;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1566206091558-7f218b696731?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80') center/cover no-repeat;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Brands Preview Section */
+        .brands-preview {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brands-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .brand-card:hover::before {
+            left: 100%;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .brand-card:nth-child(1) {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(50, 50, 50, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1558769132-cb1aedeffa2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80') center/cover no-repeat;
+        }
+
+        .brand-card:nth-child(2) {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(50, 50, 50, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80') center/cover no-repeat;
+        }
+
+        .brand-card:nth-child(3) {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(50, 50, 50, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+        }
+
+        .brand-card:nth-child(4) {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(50, 50, 50, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1485231183945-fffde7cb39c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80') center/cover no-repeat;
+        }
+
+        .brand-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .brand-card p {
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 60px 0 30px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-info {
+            flex: 1;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-info p {
+            max-width: 300px;
+            color: #ccc;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            margin: 0 40px;
+        }
+
+        .footer-links h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .footer-links a {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .contact-info {
+            text-align: right;
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 0.3;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                width: 100%;
+                margin-top: 30px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-links {
+                margin: 0;
+            }
+            
+            .contact-info {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .brands-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar" data-aos="fade-down">
+                <a class="logo">Valtral</a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="our-brand.html">Our Brand</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="social.html">Social</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" data-aos="fade-in">
+        <div class="container">
+            <h1>Timeless Elegance</h1>
+            <p>Discover our exclusive collection of premium brands that redefine luxury and style.</p>
+            <a href="our-brand.html" class="btn">Explore Our Brands</a>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Valtral</h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2010, Valtral has been at the forefront of luxury fashion, bringing together the world's most exclusive brands under one roof.</p>
+                    <p>With a commitment to quality, craftsmanship, and exceptional service, we've established ourselves as a premier destination for those who appreciate the finer things in life.</p>
+                    <a href="about.html" class="btn">Learn More</a>
+                </div>
+                <div class="about-image" data-aos="fade-left"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Preview Section -->
+    <section class="brands-preview">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Brands</h2>
+            <div class="brands-grid">
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Noir</h3>
+                    <p>Sophisticated minimalism with a focus on clean lines and premium materials.</p>
+                    <a href="noir.html" class="btn">Discover Noir</a>
+                </div>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Luxe</h3>
+                    <p>Opulent designs that celebrate extravagance and unparalleled craftsmanship.</p>
+                    <a href="luxe.html" class="btn">Discover Luxe</a>
+                </div>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Heritage</h3>
+                    <p>Timeless classics with a modern twist, inspired by generations of style.</p>
+                    <a href="heritage.html" class="btn">Discover Heritage</a>
+                </div>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Avant</h3>
+                    <p>Bold, forward-thinking designs for those who dare to be different.</p>
+                    <a href="avant.html" class="btn">Discover Avant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info" data-aos="fade-right">
+                    <div class="footer-logo">Valtral</div>
+                    <p>Redefining luxury fashion with timeless elegance and exceptional craftsmanship.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <a href="about.html">About</a>
+                    <a href="our-brand.html">Our Brand</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="social.html">Social</a>
+                </div>
+                <div class="contact-info" data-aos="fade-left">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@valtral.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                    <p>Address: 123 Luxury Avenue, IN</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Valtral. A DEMO PROJECT.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Brands | Valtral</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #fff;
+            border-radius: 2rem;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-weight: 300;
+            color: #e0e0e0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #000;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Page Hero with Background Animation */
+        .page-hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%),
+                        url('https://images.unsplash.com/photo-1601924582970-9238bcb495d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            z-index: 1;
+            animation: backgroundZoom 20s infinite alternate;
+        }
+
+        @keyframes backgroundZoom {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .page-hero .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 30px;
+            max-width: 600px;
+            color: #e0e0e0;
+        }
+
+        /* Page Content */
+        .page-content {
+            padding: 80px 0;
+            background-color: #111;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .content-block {
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-block h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .content-block h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background-color: #fff;
+        }
+
+        .content-block p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Brands Grid with Background Images */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-card {
+            background-color: #111;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        .brand-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        .brand-card:nth-child(1)::before {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%), 
+                        url('https://images.unsplash.com/photo-1558769132-cb1aedeffa2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80') center/cover no-repeat;
+        }
+
+        .brand-card:nth-child(2)::before {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%), 
+                        url('https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80') center/cover no-repeat;
+        }
+
+        .brand-card:nth-child(3)::before {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%), 
+                        url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+        }
+
+        .brand-card:nth-child(4)::before {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%), 
+                        url('https://images.unsplash.com/photo-1485231183945-fffde7cb39c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80') center/cover no-repeat;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-10px);
+            border-color: #fff;
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .brand-card:hover::before {
+            opacity: 0.9;
+        }
+
+        .brand-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .brand-card:hover .brand-icon {
+            transform: scale(1.2);
+        }
+
+        .brand-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .brand-card p {
+            margin-bottom: 25px;
+            color: #ccc;
+            text-align: center;
+        }
+
+        /* Brand Features */
+        .brand-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #fff;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 60px 0 30px;
+            border-top: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-info {
+            flex: 1;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-info p {
+            max-width: 300px;
+            color: #ccc;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            margin: 0 40px;
+        }
+
+        .footer-links h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .footer-links a {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .contact-info {
+            text-align: right;
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .contact-info a {
+            color: #ccc;
+        }
+
+        .contact-info a:hover {
+            color: #fff;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            width: 20px;
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #999;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: #000;
+                padding: 20px;
+                border-top: 1px solid #333;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .brands-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-links {
+                margin: 0;
+            }
+            
+            .contact-info {
+                text-align: left;
+            }
+            
+            .brand-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .brand-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar" data-aos="fade-down">
+                <a href="index.html" class="logo">Valtral</a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="our-brand.html">Our Brand</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="social.html">Social</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero" data-aos="fade-in">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Our Brands</h1>
+                <p>Discover the exclusive brands under the Valtral umbrella</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="content-block" data-aos="fade-up">
+                <h2>Curated Excellence</h2>
+                <p>At Valtral, we carefully select brands that embody our philosophy of timeless elegance, exceptional quality, and innovative design. Each brand under our umbrella offers a unique perspective on luxury, catering to diverse tastes while maintaining our uncompromising standards.</p>
+            </div>
+            
+            <div class="brands-grid">
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="brand-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Noir</h3>
+                    <p>Sophisticated minimalism with a focus on clean lines and premium materials. Noir represents the essence of understated luxury.</p>
+                    <a href="noir.html" class="btn">Discover Noir</a>
+                </div>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="brand-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Luxe</h3>
+                    <p>Opulent designs that celebrate extravagance and unparalleled craftsmanship. Luxe is for those who appreciate the finer things.</p>
+                    <a href="luxe.html" class="btn">Discover Luxe</a>
+                </div>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="brand-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Heritage</h3>
+                    <p>Timeless classics with a modern twist, inspired by generations of style. Heritage connects the past with the present.</p>
+                    <a href="heritage.html" class="btn">Discover Heritage</a>
+                </div>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="brand-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <h3>Avant</h3>
+                    <p>Bold, forward-thinking designs for those who dare to be different. Avant pushes the boundaries of fashion.</p>
+                    <a href="avant.html" class="btn">Discover Avant</a>
+                </div>
+            </div>
+            
+            <div class="content-block" data-aos="fade-up">
+                <h2>What Sets Our Brands Apart</h2>
+                <div class="brand-features">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <h4>Exceptional Craftsmanship</h4>
+                        <p>Each piece is meticulously crafted by skilled artisans using traditional techniques combined with modern innovation.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <h4>Sustainable Practices</h4>
+                        <p>We prioritize ethical sourcing and sustainable production methods to minimize our environmental impact.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <h4>Timeless Design</h4>
+                        <p>Our collections focus on enduring style rather than fleeting trends, creating pieces that last for generations.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <h4>Personalized Service</h4>
+                        <p>We offer bespoke consultations to help you find pieces that perfectly reflect your personal style.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info" data-aos="fade-right">
+                    <div class="footer-logo">Valtral</div>
+                    <p>Redefining luxury fashion with timeless elegance and exceptional craftsmanship.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <a href="about.html">About</a>
+                    <a href="our-brand.html">Our Brand</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="social.html">Social</a>
+                </div>
+                <div class="contact-info" data-aos="fade-left">
+                    <h3>Contact Us</h3>
+                    <p><a href="mailto:info@valtral.com"><i class="fas fa-envelope"></i> info@valtral.com</a></p>
+                    <p><a href="tel:+11234567890"><i class="fas fa-phone"></i> +1 (123) 456-7890</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Luxury Avenue, Fashion District</p>
+                    <p>India,IN </p>
+                </div>
+            </div>
+            <div class="footer-bottom" data-aos="fade-up">
+                <p>&copy; 2023 Valtral. A DEMO PROJECT.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when clicking on a link
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+</html>
