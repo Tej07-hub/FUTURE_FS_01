@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Form</title>
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('https://wallpapercave.com/wp/wp10054802.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      text-align: center;
+      font-weight: 500;
+      color: black;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: black;
+    }
+
+    label {
+      font-weight: 600;
+      color: black;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      outline: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #333;
+    }
+
+    button {
+      width: 100%;
+      background: black;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      font-family: 'Poppins', sans-serif;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: rgb(85, 85, 85);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed missing quote + added AOS animation -->
+ <form action="submit.php" method="POST" data-aos="zoom-in">
+
+    <p>Get in Touch</p>
+    <h2>Contact Me</h2>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>
